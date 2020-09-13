@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(128,122,122);
+}
+#space {
+	background-image: url("./img/space_image.png");
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+}
