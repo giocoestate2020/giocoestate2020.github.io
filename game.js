@@ -153,6 +153,8 @@ function Bullet(angle){
 }
  
 function render(){
+    ctx.clearRect(0, 0, canvasW, canvasH);
+
     player.isMoving = (keys[38]);
     if (keys[39]){
         player.rotate(1);
@@ -161,14 +163,6 @@ function render(){
        player.rotate(-1);
     }
     
-    ctx.clearRect(0, 0, canvasW, canvasH);
-    ctx.fillStyle = 'white';
-    ctx.font = '30px Lucida Console';
-    ctx.fillText("SCORE : " + score.toString(), 1250, 50);
-    ctx.fillStyle = 'white';
-    ctx.font = '30px Lucida Console';
-    ctx.fillText("LIVES : " + lives.toString(), 1250, 100);
-
     if(lives <= 0){
         window.removeEventListener("keydown", keyDown);
         window.removeEventListener("keyup", keyUp);
@@ -231,5 +225,13 @@ function render(){
             bullets[i].move();
         }
     }
+
+    ctx.fillStyle = 'white';
+    ctx.font = '30px Lucida Console';
+    ctx.fillText("SCORE : " + score.toString(), 1250, 50);
+    ctx.fillStyle = 'white';
+    ctx.font = '30px Lucida Console';
+    ctx.fillText("LIVES : " + lives.toString(), 1250, 100);
+
     requestAnimationFrame(render);
 }
